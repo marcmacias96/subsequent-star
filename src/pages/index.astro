@@ -1,16 +1,49 @@
 ---
-
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import MarqueeSection from '../components/MarqueeSection';
+import AboutSection from '../components/AboutSection';
+import SleepPhases from '../components/SleepPhases';
+import BenefitsSection from '../components/BenefitsSection';
+import PricingSection from '../components/PricingSection';
+import NewsletterSection from '../components/NewsletterSection';
+import Footer from '../components/Footer';
+import ScrollProgress from '../components/ScrollProgress';
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="description" content="Oneirós - Experiencias de sueños lúcidos en ambientes controlados. Descubre el poder de controlar tus sueños conscientemente." />
+		<meta name="keywords" content="sueños lúcidos, oneirología, experiencias oníricas, control de sueños, meditación, consciencia onírica" />
+		<title>Oneirós - Experiencias de Sueños Lúcidos</title>
+		<style>
+			@media (prefers-reduced-motion: no-preference) {
+				html {
+					scroll-behavior: smooth;
+				}
+			}
+		</style>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-background text-primary font-sans antialiased">
+		<ScrollProgress client:load />
+		<Header client:load />
+		<main class="pt-24">
+			<Hero client:load />
+			<MarqueeSection client:load />
+			<AboutSection client:load />
+			<SleepPhases client:load />
+			<BenefitsSection client:load />
+			<PricingSection client:load />
+			<NewsletterSection client:load />
+		</main>
+		<Footer client:load />
 	</body>
 </html>
